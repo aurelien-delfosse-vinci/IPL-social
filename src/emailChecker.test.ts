@@ -9,21 +9,21 @@ describe('emailChecker', () => {
             let actual = emailChecker.isValidEmail('invalid.com');
 
             expect(actual).toBe(false);
-        });
+        })
 
         it('should return false when the email has nothing before the @', () => {
 
             let actual = emailChecker.isValidEmail('@invalid.com');
 
             expect(actual).toBe(false);
-        });
+        })
 
         it('should return false when the email has nothing after the @', () => {
             
             let actual = emailChecker.isValidEmail('invalid@');
 
             expect(actual).toBe(false);
-        });
+        })
 
         it('should return false when the email does not contains at least one dot', () => {
 
@@ -38,6 +38,13 @@ describe('emailChecker', () => {
             let actual = emailChecker.isValidEmail('invalid@invalid.');
 
             expect(actual).toBe(false); 
+        })
+
+        it('should return false when the email contains a space character', () => {
+
+            let actual = emailChecker.isValidEmail('invalid @invalid.com');
+
+            expect(actual).toBe(false);
         })
     });
 })
