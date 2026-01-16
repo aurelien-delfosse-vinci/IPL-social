@@ -13,15 +13,15 @@ export class EmailChecker {
         return email.includes(' ');
     }
 
-    private isDotLastCharacter(email: string) {
+    private isDotLastCharacter(email: string): boolean {
         return email.indexOf('.') < email.length - 1;
     }
 
-    private doesEmailContainDot(email: string) {
+    private doesEmailContainDot(email: string): boolean {
         return email.includes('.');
     }
 
-    private isArobaseLastCharacter(email: string) {
+    private isArobaseLastCharacter(email: string): boolean {
         return email.indexOf('@') < email.length - 1;
     }
 
@@ -29,7 +29,7 @@ export class EmailChecker {
         return email.indexOf('@') > 0;
     }
 
-    private doesEmailContainArobase(email: string) {
+    private doesEmailContainArobase(email: string): boolean {
         return email.includes('@');
     }
 
