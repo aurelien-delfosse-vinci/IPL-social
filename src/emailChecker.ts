@@ -3,7 +3,9 @@ export class EmailChecker {
         return this.doesEmailContainArobase(email) 
         && this.doesEmailContainSomethingBeforeArobase(email)
         && email.indexOf('@') < email.length - 1 
-        && email.includes('.') && email.indexOf('.') < email.length - 1;
+        && email.includes('.') 
+        && email.indexOf('.') < email.length - 1 
+        && !email.includes(' ');
 
     }
 
