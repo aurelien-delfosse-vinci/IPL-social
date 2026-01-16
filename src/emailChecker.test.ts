@@ -46,5 +46,13 @@ describe('emailChecker', () => {
 
             expect(actual).toBe(false);
         })
-    });
+
+        it('should return true when the email is valid', () => {
+
+            let actual = emailChecker.isValidEmail('valid@valid.com');
+            
+            
+            expect(actual).toBe(true);
+        })
+    })
 })
