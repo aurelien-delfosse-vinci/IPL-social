@@ -1,4 +1,3 @@
-import { emit } from "node:cluster";
 import { EmailChecker } from "./emailChecker";
 
 describe('emailChecker', () => {
