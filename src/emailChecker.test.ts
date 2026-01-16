@@ -24,5 +24,12 @@ describe('emailChecker', () => {
 
             expect(actual).toBe(false);
         });
+
+        it('should return false when the email does not contains at least one dot', () => {
+
+            let actual = emailChecker.isValidEmail('invalid@invalidcom');
+
+            expect(actual).toBe(false);
+        })
     });
 })
