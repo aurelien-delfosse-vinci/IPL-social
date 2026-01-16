@@ -18,5 +18,12 @@ describe('emailChecker', () => {
 
             expect(actual).toBe(false);
         });
+
+        it('should return false when the email has nothing after the @', () => {
+            
+            let actual = emailChecker.isValidEmail('invalid@');
+
+            expect(actual).toBe(false);
+        });
     });
 })

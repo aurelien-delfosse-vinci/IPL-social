@@ -1,7 +1,8 @@
 export class EmailChecker {
     isValidEmail(email: string): boolean {
         return this.doesEmailContainArobase(email) 
-        && this.doesEmailContainSomethingBeforeArobase(email);
+        && this.doesEmailContainSomethingBeforeArobase(email)
+        && email.indexOf('@') < email.length - 1;
     }
 
     private doesEmailContainSomethingBeforeArobase(email: string): boolean {
