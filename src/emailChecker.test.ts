@@ -1,3 +1,4 @@
+import { emit } from "node:cluster";
 import { EmailChecker } from "./emailChecker";
 
 describe('emailChecker', () => {
@@ -7,6 +8,15 @@ describe('emailChecker', () => {
             let emailChecker = new EmailChecker();
 
             let actual = emailChecker.isValidEmail('invalid.com');
+
+            expect(actual).toBe(false);
+        });
+
+        it('should return false when the email has nothing before the @', () => {
+
+            let emailChecker = new EmailChecker();
+
+            let actual = emailChecker.isValidEmail('@invalid.com');
 
             expect(actual).toBe(false);
         });
