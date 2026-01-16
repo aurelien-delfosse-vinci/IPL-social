@@ -31,5 +31,13 @@ describe('emailChecker', () => {
 
             expect(actual).toBe(false);
         })
+
+        it('should return false when the email contains a dot who is the last character', () => {
+
+
+            let actual = emailChecker.isValidEmail('invalid@invalid.');
+
+            expect(actual).toBe(false); 
+        })
     });
 })
